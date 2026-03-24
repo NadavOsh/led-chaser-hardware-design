@@ -1,0 +1,32 @@
+Altium Designer Pick and Place Locations
+C:\Users\Public\Documents\Altium\Projects\led chaser\Project Outputs for led chaser\Pick Place for LED_pcb.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       24/03/26
+Time:       02:05
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mm
+
+"Designator","Comment","Layer","Footprint","Center-X(mm)","Center-Y(mm)","Rotation","Description"
+"U2","CD74HC4017E","TopLayer","N0016A","45.5930","42.9260","0","High Speed CMOS Logic Decade Counter/Divider with 10 Decoded Outputs, N0016A, TUBE"
+"U1","NE555P","TopLayer","P0008A","25.4000","43.1800","0","Precision Timer, 4.5 to 16 V, 0 to 70 degC, 8-Pin DIP, Pb-Free, Tube"
+"R4","120","TopLayer","FP-MRS1600-MFG","56.1340","42.4180","270","RES 120 OHM 1% 0.4W AXIAL"
+"R3","10K","TopLayer","FP-MFR-12-MFG","46.1010","23.8760","90","RES MF 1/6W 1% AXIAL"
+"R2","50k","TopLayer","FP-3362P-1-503TLF-MFG","21.8440","30.7340","180","TRIMMER 50K OHM 0.5W PC PIN TOP"
+"R1","1M","TopLayer","RESA60-630X240","29.0830","59.9440","0","Axial Resistor, 1 MOhm, +/- 1%, 250 mW, -55 to 155 degC, 2-Pin THD, RoHS, Bulk"
+"LED10","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","54.4830","58.5470","270","LED RED CLEAR FLAT 2SMD GW"
+"LED9","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","62.7380","49.6570","270","LED RED CLEAR FLAT 2SMD GW"
+"LED8","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","62.6110","27.1780","270","LED RED CLEAR FLAT 2SMD GW"
+"LED7","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","55.4990","17.0180","270","LED RED CLEAR FLAT 2SMD GW"
+"LED6","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","36.8300","10.6680","270","LED RED CLEAR FLAT 2SMD GW"
+"LED5","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","22.0980","16.7640","270","LED RED CLEAR FLAT 2SMD GW"
+"LED4","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","10.5410","26.2890","270","LED RED CLEAR FLAT 2SMD GW"
+"LED3","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","10.6680","46.4820","270","LED RED CLEAR FLAT 2SMD GW"
+"LED2","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","18.6690","58.8010","270","LED RED CLEAR FLAT 2SMD GW"
+"LED1","HLMP-P156-HK011","TopLayer","FP-HLMP-P156-HK011-MFG","38.3540","62.4840","270","LED RED CLEAR FLAT 2SMD GW"
+"J1","M20-9990246","TopLayer","FP-M20-9990246-MFG","27.6860","53.9750","180","CONN HEADER VERT 2POS 2.54MM"
+"C2","10n","TopLayer","CAPC1608X92X38NL15T08","34.0360","22.7330","90",""
+"C1","22u","TopLayer","FP-1206-L_3_2_0_2-W_1_6_0-IPC_C","34.1630","29.9720","270","General Purpose Ceramic Capacitor, 1206, 22uF, 10%, X5R, 15%, 6.3V"
