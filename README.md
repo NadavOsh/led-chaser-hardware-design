@@ -62,19 +62,6 @@ Where:
 
 ---
 
-## 🔗 Key Connections
-
-| Signal        | Source       | Destination     | Description                          |
-|--------------|-------------|----------------|--------------------------------------|
-| CLOCK        | NE555 OUT   | CD4017 CP      | Drives counter progression           |
-| CLOCK_PD     | —           | CLOCK line     | Pull-down resistor for stability     |
-| RESET        | CD4017 Q9   | CD4017 RESET   | Resets after 10th LED                |
-| LED Outputs  | CD4017 Q0–Q9 | LEDs          | Sequential LED control               |
-| LED_RES      | LEDs        | GND/VCC        | Current-limiting resistor            |
-| VCC          | Supply      | All ICs        | Power                                |
-| GND          | Supply      | All ICs        | Ground                               |
-
----
 
 ## 🧪 Bring-Up Guide
 
