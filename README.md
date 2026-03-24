@@ -12,9 +12,9 @@ LED chaser PCB using NE555 astable oscillator and CD4017 decade counter for sequ
 ## Overview
 This project is a discrete hardware implementation of a 10-LED chaser using a timer-based clock and a decade counter.
 
-An astable oscillator built with the NE555 generates a continuous clock signal, which drives a CD4017 decade counter to sequentially light LEDs in a chasing pattern.
+An astable oscillator built with the NE555 generates a tunable clock signal, which drives a CD4017 decade counter to sequentially light LEDs in a chasing pattern.
 
-The design demonstrates fundamental concepts in analog timing circuits and digital sequencing.
+The design demonstrates fundamental concepts in analog timing circuits, digital sequencing, and signal conditioning.
 
 ---
 
@@ -24,17 +24,20 @@ The design demonstrates fundamental concepts in analog timing circuits and digit
 - **Timer**: NE555 (astable mode oscillator)
 - **Counter**: CD74HC4017 (decade counter / decoder)
 - **LEDs**: 10 outputs driven sequentially
+- **Speed Control**: Potentiometer (adjustable frequency)
 - **Connector**: M20-9990246 pin header
 
 ---
 
 ## ⚙️ System Operation
 
-1. The **NE555 timer** is configured in astable mode and generates a square wave clock signal.
-2. The clock signal is fed into the **CD4017 counter clock input**.
-3. The CD4017 advances one output HIGH per clock cycle (Q0 → Q9).
-4. Each output drives an LED, creating a running "chaser" effect.
-5. After the 10th LED, the sequence resets and repeats.
+1. The **NE555 timer** operates in astable mode and generates a square wave clock signal.
+2. The clock frequency is controlled באמצעות **potentiometer**, allowing adjustable LED chase speed.
+3. The 555 output is connected to the **clock input (CP)** of the CD4017.
+4. A **pull-down resistor** is used on the clock line to ensure a defined LOW level and prevent false triggering.
+5. The CD4017 advances one output HIGH per clock cycle (Q0 → Q9).
+6. Each output drives an LED through a **current-limiting resistor**.
+7. After the final step, the sequence resets and repeats continuously.
 
 ---
 
@@ -46,7 +49,7 @@ The design demonstrates fundamental concepts in analog timing circuits and digit
 
 ## ⏱️ Clock Configuration (NE555 Astable)
 
-The oscillation frequency is determined by external resistors and capacitor:
+The oscillation frequency is determined by external resistors, potentiometer, and capacitor:
 
 - Frequency:
   f ≈ 1.44 / ((R1 + 2·R2) · C)
@@ -54,19 +57,22 @@ The oscillation frequency is determined by external resistors and capacitor:
 - Duty Cycle:
   D ≈ (R1 + R2) / (R1 + 2·R2)
 
-This allows tuning the LED chase speed by adjusting R and C values.
+Where:
+- R2 includes the **potentiometer**, enabling real-time speed adjustment
 
 ---
 
 ## 🔗 Key Connections
 
-| Signal        | Source     | Destination   | Description                     |
-|--------------|------------|--------------|---------------------------------|
-| CLOCK        | NE555 OUT  | CD4017 CLK   | Drives counter progression      |
-| RESET        | CD4017 Q9  | CD4017 RESET | Resets after 10th LED           |
-| LED Outputs  | CD4017 Q0–Q9 | LEDs       | Sequential LED control          |
-| VCC          | Supply     | All ICs      | Power                           |
-| GND          | Supply     | All ICs      | Ground                          |
+| Signal        | Source       | Destination     | Description                          |
+|--------------|-------------|----------------|--------------------------------------|
+| CLOCK        | NE555 OUT   | CD4017 CP      | Drives counter progression           |
+| CLOCK_PD     | —           | CLOCK line     | Pull-down resistor for stability     |
+| RESET        | CD4017 Q9   | CD4017 RESET   | Resets after 10th LED                |
+| LED Outputs  | CD4017 Q0–Q9 | LEDs          | Sequential LED control               |
+| LED_RES      | LEDs        | GND/VCC        | Current-limiting resistor            |
+| VCC          | Supply      | All ICs        | Power                                |
+| GND          | Supply      | All ICs        | Ground                               |
 
 ---
 
@@ -78,29 +84,34 @@ This allows tuning the LED chase speed by adjusting R and C values.
 
 ### Step 2 – Oscillator Check
 - Probe NE555 output with oscilloscope
-- Confirm square wave signal
+- Adjust potentiometer and verify frequency change
 
-### Step 3 – Counter Verification
+### Step 3 – Clock Integrity
+- Confirm clean transitions at CD4017 CP input
+- Verify pull-down prevents floating/noise
+
+### Step 4 – Counter Verification
 - Observe sequential toggling on CD4017 outputs
 
-### Step 4 – LED Operation
-- Confirm LEDs light in order (chasing pattern)
+### Step 5 – LED Operation
+- Confirm LEDs light in order with adjustable speed
 
 ---
 
 ## 🧠 Design Notes
-- NE555 provides a simple and reliable clock source without a microcontroller
-- CD4017 eliminates the need for firmware by handling sequencing in hardware
-- Reset is connected to Q9 to create a repeating 10-step cycle
-- Design demonstrates integration of analog and digital components
+- Potentiometer enables intuitive real-time control of chase speed
+- Pull-down resistor ensures stable clock input and prevents false triggering
+- Current-limiting resistor protects LEDs and controls brightness
+- NE555 provides a simple clock source without requiring firmware
+- CD4017 enables sequential logic without a microcontroller
 
 ---
 
 ## ⚠️ Limitations / Improvements
-- No brightness control (PWM could be added)
-- Frequency stability depends on passive component tolerances
-- Could add variable resistor for adjustable speed
-- No current limiting discussion (ensure proper resistors for LEDs)
+- Frequency accuracy depends on passive component tolerances
+- Duty cycle is not independently controlled
+- Could add buffering between 555 and 4017 for improved signal integrity
+- Optional: add PWM-based brightness control
 
 ---
 
@@ -113,5 +124,5 @@ This allows tuning the LED chase speed by adjusting R and C values.
 
 ## 📸 Future Additions
 - Board images
-- Oscilloscope captures of clock signal
-- Measured frequency vs calculated values
+- Oscilloscope captures (clock signal & frequency tuning)
+- Measured vs calculated frequency analysis
