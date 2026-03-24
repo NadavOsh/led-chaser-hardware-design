@@ -119,10 +119,11 @@ Where:
 - Schematic (PDF)
 - PCB layout
 - BOM
+- Gereber Files
+- Pick and Place
 
 ---
 
 ## 📸 Future Additions
-- Board images
 - Oscilloscope captures (clock signal & frequency tuning)
 - Measured vs calculated frequency analysis
