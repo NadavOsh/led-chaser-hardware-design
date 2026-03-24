@@ -63,6 +63,20 @@ Where:
 ---
 
 
+## NE555 Timer Pinout
+
+| Pin Number | Name | Function |
+|:---:|:---|:---|
+| 1 | **GND** | [cite_start]Ground reference (0V) [cite: 472] |
+| 2 | **TRIG** | [cite_start]Trigger Input: Initiates the timing cycle [cite: 464] |
+| 3 | **OUT** | [cite_start]Output: Provides the timer's output signal [cite: 463] |
+| 4 | **RESET** | [cite_start]Reset: Resets the internal flip-flop [cite: 463] |
+| 5 | **CTRL** | [cite_start]Control Voltage: Access to internal threshold levels  |
+| 6 | **THRES** | [cite_start]Threshold Input: Ends the timing cycle [cite: 466] |
+| 7 | **DISCH** | [cite_start]Discharge Output: Used for the timing capacitor  |
+| 8 | **VCC** | [cite_start]Supply Voltage: Typically +5V [cite: 471] |
+
+
 ## 🧪 Bring-Up Guide
 
 ### Step 1 – Power
