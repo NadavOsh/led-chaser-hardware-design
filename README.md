@@ -32,7 +32,7 @@ The design demonstrates fundamental concepts in analog timing circuits, digital 
 ## ⚙️ System Operation
 
 1. The **NE555 timer** operates in astable mode and generates a square wave clock signal.
-2. The clock frequency is controlled באמצעות **potentiometer**, allowing adjustable LED chase speed.
+2. The clock frequency is controlled with a **potentiometer**, allowing adjustable LED chase speed.
 3. The 555 output is connected to the **clock input (CP)** of the CD4017.
 4. A **pull-down resistor** is used on the clock line to ensure a defined LOW level and prevent false triggering.
 5. The CD4017 advances one output HIGH per clock cycle (Q0 → Q9).
