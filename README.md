@@ -75,14 +75,14 @@ The pinout characteristics of the 555 is as follows:
 
 | Pin Number | Name | Function |
 |:---:|:---|:---|
-| 1 | **GND** | [Ground reference (0V) |
+| 1 | **GND** | Ground reference (0V) |
 | 2 | **TRIG** | Trigger Input: Initiates the timing cycle |
-| 3 | **OUT** | [Output: Provides the timer's output signal |
+| 3 | **OUT** | Output: Provides the timer's output signal |
 | 4 | **RESET** |Reset: Resets the internal flip-flop  |
 | 5 | **CTRL** | Control Voltage: Access to internal threshold levels  |
 | 6 | **THRES** |Threshold Input: Ends the timing cycle |
 | 7 | **DISCH** |Discharge Output: Used for the timing capacitor  |
-| 8 | **VCC** | [Supply Voltage: Typically +5V |
+| 8 | **VCC** | Supply Voltage: Typically +5V |
 
 
 ## 🧪 Bring-Up Guide
